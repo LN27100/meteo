@@ -211,6 +211,7 @@ footer {
         border-color: transparent transparent transparent #1d898e;
         z-index: 2;
     }
+   
 
     .letter {
         left: 10px;
@@ -237,22 +238,11 @@ footer {
         }
 
         .letter-context {
-            margin-top: 10px;
-            margin-left: 5px;
-            height: 10px;
-            width: 20%;
+            width: 100%;
+            font-family: 'Zen Tokyo Zoo', sans-serif;
+            font-size: 30px;
             color: red;
             text-align: center;
-        }
-
-        .letter-stamp {
-            margin-top: 30px;
-            margin-left: 120px;
-            border-radius: 100%;
-            height: 30px;
-            width: 30px;
-            background: #69caa3;
-            opacity: 0.3;
         }
 
 .shadow {
@@ -292,3 +282,16 @@ footer {
     }
 
 }
+
+@media (max-width: 768px) {
+    h1, h2 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .letter-image {
+        visibility: hidden;
+    }
+}
+
