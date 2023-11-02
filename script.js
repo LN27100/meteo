@@ -23,7 +23,6 @@ function fetchDataForCity(city) {
                 const day = date.toLocaleDateString();
                 const weatherIconUrl = `https://openweathermap.org/img/wn/${item.weather[0].icon}.png`; // URL de l'icône directement depuis l'API
                 const humidity = item.main.humidity; // Récupération de l'humidité
-                const feelsLike = item.main.feels_like;
                 const minTemp = item.main.temp_min;
                 const maxTemp = item.main.temp_max;
                 const gustSpeedMs = item.wind.gust;
@@ -53,7 +52,6 @@ function fetchDataForCity(city) {
                     <p class="weather-info">Description : ${description}</p>
                     <p class="weather-info">Vitesse du vent : ${windSpeedKmh} km/h</p>
                     <p class="weather-info">Humidité : ${humidity}%</p> <!-- Affichage de l'humidité -->
-                    <p class="weather-info">Ressenti : ${feelsLike}°C</p>
                     <p class="weather-info">Température minimale : ${minTemp}°C</p>
                     <p class="weather-info">Température maximale : ${maxTemp}°C</p>
                     <p class="weather-info">Rafales : ${gustSpeedKmh} km/h</p>
