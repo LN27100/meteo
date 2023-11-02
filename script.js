@@ -1,50 +1,3 @@
-// const city = 'Val-de-Reuil';
-
-// fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=2e5639d78c766e927181ac78f41ae2dc&lang=fr&units=metric`)
-//     .then(response => response.json())
-//     .then(data => {
-//         console.log(data);
-
-//         const weatherInfo = document.getElementById('weather-info');
-//         weatherInfo.innerHTML = '';
-
-//         const title = document.createElement('h2');
-//         title.textContent = `Prévisions météorologiques pour ${data.city.name}`;
-//         weatherInfo.appendChild(title);
-
-//         let currentDay = null;
-//         let dayContainer = null;
-
-//         data.list.forEach(item => {
-//             const date = new Date(item.dt * 1000);
-//             const day = date.toLocaleDateString();
-
-//             if (day !== currentDay) {
-//                 dayContainer = document.createElement('div');
-//                 dayContainer.className = 'day-container';
-//                 dayContainer.innerHTML = `<h3>${day}</h3>`;
-//                 weatherInfo.appendChild(dayContainer);
-
-//                 currentDay = day;
-//             }
-
-//             const temp = item.main.temp;
-//             const description = item.weather[0].description;
-//             const windSpeedMs = item.wind.speed;
-//             const windSpeedKmh = (windSpeedMs * 3.6).toFixed(2);
-
-//             const weatherItem = document.createElement('div');
-//             weatherItem.className = 'weather-card';
-//             weatherItem.innerHTML = `
-//                 <h3 class="weather-card">${date.toLocaleString()}</h3>
-//                 <p class="weather-info">Température : ${temp}°C</p>
-//                 <p class="weather-info">Description : ${description}</p>
-//                 <p class="weather-info">Vitesse du vent : ${windSpeedKmh} km/h</p>
-//             `;
-
-//             dayContainer.appendChild(weatherItem);
-//         });
-//     });
 
 // Fonction pour mettre à jour la ville affichée
 function updateCity(cityName) {
@@ -68,6 +21,18 @@ function fetchDataForCity(city) {
             data.list.forEach(item => {
                 const date = new Date(item.dt * 1000);
                 const day = date.toLocaleDateString();
+                const weatherIconUrl = `https://openweathermap.org/img/wn/${item.weather[0].icon}.png`; // URL de l'icône directement depuis l'API
+                const humidity = item.main.humidity; // Récupération de l'humidité
+                const feelsLike = item.main.feels_like;
+                const minTemp = item.main.temp_min;
+                const maxTemp = item.main.temp_max;
+                const gustSpeedMs = item.wind.gust;
+                const gustSpeedKmh = (gustSpeedMs * 3.6).toFixed(2);
+                const rain = item.rain ? item.rain['3h'] : 0; // Vérifiez si la propriété 'rain' existe
+                const temp = item.main.temp;
+                const description = item.weather[0].description;
+                const windSpeedMs = item.wind.speed;
+                const windSpeedKmh = (windSpeedMs * 3.6).toFixed(2);
 
                 if (day !== currentDay) {
                     dayContainer = document.createElement('div');
@@ -78,26 +43,27 @@ function fetchDataForCity(city) {
                     currentDay = day;
                 }
 
-                const temp = item.main.temp;
-                const description = item.weather[0].description;
-                const windSpeedMs = item.wind.speed;
-                const windSpeedKmh = (windSpeedMs * 3.6).toFixed(2);
-
+                
                 const weatherItem = document.createElement('div');
                 weatherItem.className = 'weather-card';
                 weatherItem.innerHTML = `
                     <h3 class="weather-card">${date.toLocaleString()}</h3>
+                    <img src="${weatherIconUrl}" alt="Weather Icon">
                     <p class="weather-info">Température : ${temp}°C</p>
                     <p class="weather-info">Description : ${description}</p>
                     <p class="weather-info">Vitesse du vent : ${windSpeedKmh} km/h</p>
+                    <p class="weather-info">Humidité : ${humidity}%</p> <!-- Affichage de l'humidité -->
+                    <p class="weather-info">Ressenti : ${feelsLike}°C</p>
+                    <p class="weather-info">Température minimale : ${minTemp}°C</p>
+                    <p class="weather-info">Température maximale : ${maxTemp}°C</p>
+                    <p class="weather-info">Rafales : ${gustSpeedKmh} km/h</p>
+                    <p class="weather-info">Pluie (3 heures) : ${rain} mm</p>
                 `;
 
                 dayContainer.appendChild(weatherItem);
             });
         })
-        .catch(error => {
-            console.error('Erreur lors de la récupération des données météorologiques :', error);
-        });
+      
 }
 
 // Recherche de la nouvelle ville
