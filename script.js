@@ -46,7 +46,7 @@ function fetchDataForCity(city) {
                 const weatherItem = document.createElement('div');
                 weatherItem.className = 'weather-card';
                 weatherItem.innerHTML = `
-                    <h3 class="weather-card">${date.toLocaleString()}</h3>
+                    <h4 class="tittle">${date.toLocaleString()}</h4>
                     <img src="${weatherIconUrl}" alt="Weather Icon">
                     <p class="weather-info">Température : ${temp}°C</p>
                     <p class="weather-info">Description : ${description}</p>
