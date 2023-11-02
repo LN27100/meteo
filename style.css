@@ -1,0 +1,29 @@
+.day-container {
+    clear: both;
+    margin-top: 20px;
+}
+
+.weather-card {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    width: 300px;
+    float: left;
+}
+
+.weather-card h3 {
+    font-size: 24px;
+    margin: 10px 0 0;
+    padding: 10px 0;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 5px 5px 0 0;
+}
+
+.weather-info p {
+    margin: 10px 0;
+}
