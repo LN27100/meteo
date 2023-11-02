@@ -22,7 +22,7 @@ body {
 
 .weather-card {
     font-family: 'Big Shoulders Stencil Display', sans-serif;
-    background: linear-gradient(0deg, rgba(201,245,247,1) 8%, rgba(159,244,248,1) 32%, rgba(86,203,208,1) 51%, rgba(28,159,165,1) 77%);
+    background: linear-gradient(0deg, rgba(201, 245, 247, 1) 8%, rgba(159, 244, 248, 1) 32%, rgba(86, 203, 208, 1) 51%, rgba(28, 159, 165, 1) 77%);
     border: 1px solid #ccc;
     border-radius: 5px;
     margin: 1rem;
@@ -39,6 +39,16 @@ body {
     text-align: center;
     color: white;
     background-color: #1d898e;
+    border-radius: 5px;
+    -webkit-box-shadow: 6px 6px 10px 3px #183a43;
+    -moz-box-shadow: 6px 6px 10px 3px #183a43;
+    filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=6, OffY=6, Color='#183a43', Positive='true');
+    zoom: 1;
+    box-shadow: 6px 6px 10px 3px #183a43;
+}
+
+.tittle:hover {
+    background-color: #01A195;
 }
 
 .weather-info p {
@@ -82,13 +92,20 @@ h2 {
     font-weight: lighter;
 }
 
-#weather-info > div > h3 {
-    font-size: 24px;
+#weather-info>div>h3 {
+    font-size: 40px;
     margin: 2rem;
     padding: 1rem;
     background-color: #1d898e;
     color: white;
     border-radius: 5px;
     text-align: center;
-    font-family: "Tilana", sans-serif;
+    font-family: 'Big Shoulders Stencil Display', sans-serif;
+    -webkit-box-shadow: 8px 8px 8px 3px #69caa3;
+    -moz-box-shadow: 8px 8px 8px 3px #69caa3;
+    filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=8, OffY=8, Color='#69caa3', Positive='true');
+    zoom: 1;
+    box-shadow: 8px 8px 8px 3px #69caa3;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
 }

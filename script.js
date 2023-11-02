@@ -5,8 +5,9 @@ function updateCity(cityName) {
     cityElement.textContent = cityName;
 }
 
-// Fonction pour récupérer les données météorologiques pour une ville donnée
+// Fonction pour récupérer les données météorologiques pour une ville
 function fetchDataForCity(city) {
+    // Effectue une requête vers l'API OpenWeatherMap
     fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=2e5639d78c766e927181ac78f41ae2dc&lang=fr&units=metric`)
         .then(response => response.json())
         .then(data => {
@@ -18,11 +19,12 @@ function fetchDataForCity(city) {
             let currentDay = null;
             let dayContainer = null;
 
+            // parcoure chaque élément du tableau prévisionnel et exécute une fonction donnée sur chaque élément de celui-ci.
             data.list.forEach(item => {
                 const date = new Date(item.dt * 1000);
                 const day = date.toLocaleDateString();
-                const weatherIconUrl = `https://openweathermap.org/img/wn/${item.weather[0].icon}.png`; // URL de l'icône directement depuis l'API
-                const humidity = item.main.humidity; // Récupération de l'humidité
+                const weatherIconUrl = `https://openweathermap.org/img/wn/${item.weather[0].icon}.png`; // URL de l'icône récupérée directement depuis l'API
+                const humidity = item.main.humidity;
                 const minTemp = item.main.temp_min;
                 const maxTemp = item.main.temp_max;
                 const gustSpeedMs = item.wind.gust;
@@ -33,6 +35,7 @@ function fetchDataForCity(city) {
                 const windSpeedMs = item.wind.speed;
                 const windSpeedKmh = (windSpeedMs * 3.6).toFixed(2);
 
+                // Crée un conteneur de jour si la date change
                 if (day !== currentDay) {
                     dayContainer = document.createElement('div');
                     dayContainer.className = 'day-container';
@@ -42,7 +45,7 @@ function fetchDataForCity(city) {
                     currentDay = day;
                 }
 
-                
+
                 const weatherItem = document.createElement('div');
                 weatherItem.className = 'weather-card';
                 weatherItem.innerHTML = `
@@ -61,10 +64,10 @@ function fetchDataForCity(city) {
                 dayContainer.appendChild(weatherItem);
             });
         })
-      
+
 }
 
-// Recherche de la nouvelle ville
+// Recherche de la nouvelle ville entrée
 const searchButton = document.getElementById('search-button');
 searchButton.addEventListener('click', () => {
     const newCityInput = document.getElementById('new-city');
@@ -80,5 +83,5 @@ searchButton.addEventListener('click', () => {
     newCityInput.value = '';
 });
 
-// Recherche de la ville initiale
+// Recherche de la ville par défaut
 fetchDataForCity('Val-de-Reuil');
