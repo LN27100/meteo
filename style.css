@@ -16,13 +16,6 @@ body {
     background-attachment: fixed;
 }
 
-h1 {
-    text-align: center;
-    color: azure;
-    font-family: 'Rampart One', sans-serif;
-    font-size: 50px;
-}
-
 h2 {
     text-align: center;
     color: azure;
@@ -164,86 +157,87 @@ footer {
     transition: .4s;
 }
 
-    .body {
-        position: absolute;
-        bottom: 0;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 0 0 100px 200px;
-        border-color: transparent transparent #1d898e transparent;
-        z-index: 2;
-    }
+.body {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 100px 200px;
+    border-color: transparent transparent #1d898e transparent;
+    z-index: 2;
+}
 
-    .top-fold {
-        position: absolute;
-        top: 50px;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 50px 100px 0 100px;
-        -webkit-transform-origin: 50% 0%;
-        -webkit-transition: transform .4s .4s, z-index .2s .4s;
-        -moz-transform-origin: 50% 0%;
-        -moz-transition: transform .4s .4s, z-index .2s .4s;
-        transform-origin: 50% 0%;
-        transition: transform .4s .4s, z-index .2s .4s;
-        border-color: #01A195 transparent transparent transparent;
-        z-index: 2;
-    }
+.top-fold {
+    position: absolute;
+    top: 50px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 50px 100px 0 100px;
+    -webkit-transform-origin: 50% 0%;
+    -webkit-transition: transform .4s .4s, z-index .2s .4s;
+    -moz-transform-origin: 50% 0%;
+    -moz-transition: transform .4s .4s, z-index .2s .4s;
+    transform-origin: 50% 0%;
+    transition: transform .4s .4s, z-index .2s .4s;
+    border-color: #01A195 transparent transparent transparent;
+    z-index: 2;
+}
 
-    .back-fold {
-        position: absolute;
-        bottom: 0;
-        width: 200px;
-        height: 100px;
-        background: #01A195;
-        z-index: 0;
-    }
+.back-fold {
+    position: absolute;
+    bottom: 0;
+    width: 200px;
+    height: 100px;
+    background: #01A195;
+    z-index: 0;
+}
 
-    .left-fold {
-        position: absolute;
-        bottom: 0;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 50px 0 50px 100px;
-        border-color: transparent transparent transparent #1d898e;
-        z-index: 2;
-    }
-   
+.left-fold {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 50px 0 50px 100px;
+    border-color: transparent transparent transparent #1d898e;
+    z-index: 2;
+}
 
-    .letter {
-        left: 10px;
-        bottom: 0px;
-        position: absolute;
-        width: 160px;
-        height: 60px;
-        background: white;
-        z-index: 1;
-        overflow: hidden;
-        -webkit-transition: .4s .2s;
-        -moz-transition: .4s .2s;
-        transition: .4s .2s;
-        text-align: center;
-    }
-        .letter-border {
-            height: 10px;
-            width: 100%;
-            background: repeating-linear-gradient(-45deg,
-                    #1d898e,
-                    #01A195 8px,
-                    transparent 8px,
-                    transparent 18px);
-        }
 
-        .letter-context {
-            width: 100%;
-            font-family: 'Zen Tokyo Zoo', sans-serif;
-            font-size: 30px;
-            color: red;
-            text-align: center;
-        }
+.letter {
+    left: 10px;
+    bottom: 0px;
+    position: absolute;
+    width: 160px;
+    height: 60px;
+    background: white;
+    z-index: 1;
+    overflow: hidden;
+    -webkit-transition: .4s .2s;
+    -moz-transition: .4s .2s;
+    transition: .4s .2s;
+    text-align: center;
+}
+
+.letter-border {
+    height: 10px;
+    width: 100%;
+    background: repeating-linear-gradient(-45deg,
+            #1d898e,
+            #01A195 8px,
+            transparent 8px,
+            transparent 18px);
+}
+
+.letter-context {
+    width: 100%;
+    font-family: 'Zen Tokyo Zoo', sans-serif;
+    font-size: 30px;
+    color: red;
+    text-align: center;
+}
 
 .shadow {
     position: absolute;
@@ -283,15 +277,115 @@ footer {
 
 }
 
-@media (max-width: 768px) {
-    h1, h2 {
-        font-size: 20px;
-    }
+
+
+/* titre avec bordures animées */
+.background-img {
+    height: 100px;
+    width: 900px;
+    margin: 5% auto;
+    position: relative;
 }
 
+.content h1 {
+    font-size: 40px;
+    font-family: 'Rampart One', sans-serif;
+    text-align: center;
+}
+
+.box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 900px;
+    height: 100px;
+    background: transparent;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgb(18, 6, 80);
+    border: 2px solid #046861;
+    color: white;
+    padding: 20px;
+}
+
+.box .content {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border: 1px solid #01A195;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(9, 0, 0, 0.5);
+}
+
+.box span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    box-sizing: border-box;
+
+}
+
+
+.box span:nth-child(1) {
+    transform: rotate(180deg);
+}
+
+.box span:nth-child(2) {
+    transform: rotate(360deg);
+}
+
+.box span:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #50dfdb;
+    animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: scaleX(0);
+        transform-origin: left;
+    }
+
+    50% {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+
+    50.1% {
+        transform: scaleX(1);
+        transform-origin: right;
+
+    }
+
+    100% {
+        transform: scaleX(0);
+        transform-origin: right;
+
+    }
+
+
+}
+
+
+
+
 @media (max-width: 768px) {
+
+    h1,
+    h2 {
+        font-size: 20px;
+    }
+
     .letter-image {
         visibility: hidden;
     }
 }
-
