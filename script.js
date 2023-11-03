@@ -49,16 +49,22 @@ function fetchDataForCity(city) {
                 const weatherItem = document.createElement('div')
                 weatherItem.className = 'weather-card'
                 weatherItem.innerHTML = `
-                    <h4 class="tittle">${date.toLocaleString()}</h4>
-                    <img src="${weatherIconUrl}" alt="Weather Icon">
-                    <p class="weather-info"><strong><u><img class ="logo2" src="icones/temperature.png"></u></strong> ${temp}°C</p>
-                    <p class="weather-info"><strong><u><img class ="logo2" src="icones/description.png"></u></strong> ${description}</p>
-                    <p class="weather-info"><strong><u><img class ="logo2" src="icones/vent.png"></u></strong> ${windSpeedKmh} km/h</p>
-                    <p class="weather-info"><strong><u><img class ="logo2" src="icones/precipitation.png"></u></strong> ${humidity}%</p> <!-- Affichage de l'humidité -->
-                    <p class="weather-info"><strong><u><img class ="logo2" src="icones/thermometreMin.png">Min :</u></strong> ${minTemp}°C</p>
-                    <p class="weather-info"><strong><u><img class ="logo" src="icones/thermometre.png">Max :</u></strong> ${maxTemp}°C</p>
-                    <p class="weather-info"><strong><u><img class ="logo2" src="icones/rafale.png">Max :</u></strong> ${gustSpeedKmh} km/h</p>
-                    <p class="weather-info"><strong><u><img class ="logo2" src="icones/pluie.png"></u></strong> ${rain} mm</p>
+                       <h4 class="tittle">${date.toLocaleString()}</h4>
+    <img src="${weatherIconUrl}" alt="Weather Icon">
+    <div class="weather-info-part">
+        <p class="weather-info"><strong><u><img class ="logo2" src="icones/description.png">Description :</u></strong> ${description}</p>
+        <p class="weather-info"><strong><u><img class ="logo2" src="icones/vent.png">Vitesse du vent :</u></strong> ${windSpeedKmh} km/h</p>
+        <p class="weather-info"><strong><u><img class ="logo2" src="icones/precipitation.png">Humidité :</u></strong> ${humidity}%</p>
+    </div>
+    <div class="weather-info-part">
+        <p class="weather-info"><strong><u><img class ="logo2" src="icones/temperature.png">Température :</u></strong> ${temp}°C</p>
+        <p class="weather-info"><strong><u><img class ="logo2" src="icones/thermometreMin.png">Min :</u></strong> ${minTemp}°C</p>
+        <p class="weather-info"><strong><u><img class ="logo" src="icones/thermometre.png">Max :</u></strong> ${maxTemp}°C</p>
+    </div>
+    <div class="weather-info-part">
+        <p class="weather-info"><strong><u><img class ="logo2" src="icones/rafale.png">Rafales :</u></strong> ${gustSpeedKmh} km/h</p>
+        <p class="weather-info"><strong><u><img class ="logo2" src="icones/pluie.png">Pluie (3 heures) :</u></strong> ${rain} mm</p>
+    </div>
                 `;
 
                 dayContainer.appendChild(weatherItem)
