@@ -35,9 +35,12 @@ h2 {
     border-radius: 5px;
     margin: 1rem;
     padding: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 300px;
     float: left;
+}
+
+.weather-card:hover {
+transform: scale(1.25);
 }
 
 .tittle {
@@ -53,10 +56,6 @@ h2 {
     filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=6, OffY=6, Color='#183a43', Positive='true');
     zoom: 1;
     box-shadow: 6px 6px 10px 3px #183a43;
-}
-
-.tittle:hover {
-    background-color: #01A195;
 }
 
 .weather-info p {
@@ -139,9 +138,10 @@ footer {
 /* Enveloppe Alerte  */
 .letter-image {
     position: absolute;
+    margin-left: 3rem;
     top: 0;
     width: 20px;
-    height: 20px;
+    height: 30px;
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
@@ -164,7 +164,7 @@ footer {
     height: 0;
     border-style: solid;
     border-width: 0 0 100px 200px;
-    border-color: transparent transparent #1d898e transparent;
+    border-color: transparent transparent #01A195 transparent;
     z-index: 2;
 }
 
@@ -181,7 +181,7 @@ footer {
     -moz-transition: transform .4s .4s, z-index .2s .4s;
     transform-origin: 50% 0%;
     transition: transform .4s .4s, z-index .2s .4s;
-    border-color: #01A195 transparent transparent transparent;
+    border-color: #50dfdb transparent transparent transparent;
     z-index: 2;
 }
 
@@ -201,17 +201,17 @@ footer {
     height: 0;
     border-style: solid;
     border-width: 50px 0 50px 100px;
-    border-color: transparent transparent transparent #1d898e;
+    border-color: transparent transparent transparent #01A195;
     z-index: 2;
 }
 
 
 .letter {
-    left: 10px;
+    left: 20px;
     bottom: 0px;
     position: absolute;
     width: 160px;
-    height: 60px;
+    height: 70px;
     background: white;
     z-index: 1;
     overflow: hidden;
@@ -239,21 +239,6 @@ footer {
     text-align: center;
 }
 
-.shadow {
-    position: absolute;
-    top: 200px;
-    left: 50%;
-    width: 400px;
-    height: 30px;
-    transition: .4s;
-    transform: translateX(-50%);
-    -webkit-transition: .4s;
-    -webkit-transform: translateX(-50%);
-    -moz-transition: .4s;
-    -moz-transform: translateX(-50%);
-    border-radius: 100%;
-}
-
 .letter-image:hover {
     .animated-mail {
         transform: translateY(50px);
@@ -279,15 +264,18 @@ footer {
 
 
 
+
 /* titre avec bordures animées */
 .background-img {
     height: 100px;
-    width: 900px;
+    width: 60%;
     margin: 5% auto;
     position: relative;
 }
 
-.content h1 {
+
+body > section > div > div > div > div > h1
+ {
     font-size: 40px;
     font-family: 'Rampart One', sans-serif;
     text-align: center;
@@ -298,7 +286,7 @@ footer {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 900px;
+    width: 90%;
     height: 100px;
     background: transparent;
     overflow: hidden;
@@ -328,9 +316,7 @@ footer {
     height: 100%;
     display: block;
     box-sizing: border-box;
-
 }
-
 
 .box span:nth-child(1) {
     transform: rotate(180deg);
@@ -371,21 +357,32 @@ footer {
         transform-origin: right;
 
     }
-
-
 }
 
 
 
+/* responsive */
+@media (max-width: 1391px) {
 
-@media (max-width: 768px) {
+    
+        .content h1 {
+            font-size: 25px;
+        }
+  
+}
 
-    h1,
-    h2 {
+@media (max-width: 648px) {
+
+    
+    .content h1 {
         font-size: 20px;
     }
 
-    .letter-image {
-        visibility: hidden;
-    }
+}
+
+@media (max-width: 1200px) {
+
+.letter-image {
+    visibility: hidden;
+}
 }
