@@ -40,7 +40,7 @@ h2 {
 }
 
 .weather-card:hover {
-transform: scale(1.25);
+    transform: scale(1.25);
 }
 
 .tittle {
@@ -58,13 +58,11 @@ transform: scale(1.25);
     box-shadow: 6px 6px 10px 3px #183a43;
 }
 
-#weather-info > div > div > img {
-    width: 70px;
-    height: 70px;
-    margin-left: 1rem;
-    margin-top: 1rem;
-}
 
+#weather-info > div > div > img {
+    width: 100px;
+    height: 100px;
+}
 
 .logo {
     height: 25px;
@@ -74,8 +72,10 @@ transform: scale(1.25);
 .logo2 {
     height: 30px;
     width: auto;
+    margin-right: 0.5rem;
 }
-#weather-info > div > div > p {
+
+#weather-info>div>div>p {
     padding-left: 2rem;
     color: #183a43;
     font-size: 20px;
@@ -272,8 +272,7 @@ body>div.search-container {
 }
 
 
-body > section > div > div > div > div > h1
- {
+body>section>div>div>div>div>h1 {
     font-size: 40px;
     font-family: 'Rampart One', sans-serif;
     text-align: center;
@@ -384,16 +383,16 @@ footer {
 /* responsive */
 @media (max-width: 1391px) {
 
-    
-        .content h1 {
-            font-size: 25px;
-        }
-  
+
+    .content h1 {
+        font-size: 25px;
+    }
+
 }
 
 @media (max-width: 648px) {
 
-    
+
     .content h1 {
         font-size: 20px;
     }
@@ -402,7 +401,7 @@ footer {
 
 @media (max-width: 1200px) {
 
-.letter-image {
-    visibility: hidden;
-}
+    .letter-image {
+        visibility: hidden;
+    }
 }
