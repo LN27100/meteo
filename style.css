@@ -65,6 +65,16 @@ transform: scale(1.25);
     margin-top: 1rem;
 }
 
+
+.logo {
+    height: 25px;
+    width: auto;
+}
+
+.logo2 {
+    height: 30px;
+    width: auto;
+}
 #weather-info > div > div > p {
     padding-left: 2rem;
     color: #183a43;

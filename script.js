@@ -55,8 +55,8 @@ function fetchDataForCity(city) {
                     <p class="weather-info"><strong><u>Description :</u></strong> ${description}</p>
                     <p class="weather-info"><strong><u>Vitesse du vent :</u></strong> ${windSpeedKmh} km/h</p>
                     <p class="weather-info"><strong><u>Humidité :</u></strong> ${humidity}%</p> <!-- Affichage de l'humidité -->
-                    <p class="weather-info"><strong><u>Température minimale :</u></strong> ${minTemp}°C</p>
-                    <p class="weather-info"><strong><u>Température maximale :</u></strong> ${maxTemp}°C</p>
+                    <p class="weather-info"><strong><u><img class ="logo2" src="thermometreMin.png">Température minimale :</u></strong> ${minTemp}°C</p>
+                    <p class="weather-info"><strong><u><img class ="logo" src="thermometre.png">Température maximale :</u></strong> ${maxTemp}°C</p>
                     <p class="weather-info"><strong><u>Rafales :</u></strong> ${gustSpeedKmh} km/h</p>
                     <p class="weather-info"><strong><u>Pluie (3 heures) :</u></strong> ${rain} mm</p>
                 `;
