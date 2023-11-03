@@ -51,14 +51,14 @@ function fetchDataForCity(city) {
                 weatherItem.innerHTML = `
                     <h4 class="tittle">${date.toLocaleString()}</h4>
                     <img src="${weatherIconUrl}" alt="Weather Icon">
-                    <p class="weather-info">Température : ${temp}°C</p>
-                    <p class="weather-info">Description : ${description}</p>
-                    <p class="weather-info">Vitesse du vent : ${windSpeedKmh} km/h</p>
-                    <p class="weather-info">Humidité : ${humidity}%</p> <!-- Affichage de l'humidité -->
-                    <p class="weather-info">Température minimale : ${minTemp}°C</p>
-                    <p class="weather-info">Température maximale : ${maxTemp}°C</p>
-                    <p class="weather-info">Rafales : ${gustSpeedKmh} km/h</p>
-                    <p class="weather-info">Pluie (3 heures) : ${rain} mm</p>
+                    <p class="weather-info"><strong><u>Température :</u></strong> ${temp}°C</p>
+                    <p class="weather-info"><strong><u>Description :</u></strong> ${description}</p>
+                    <p class="weather-info"><strong><u>Vitesse du vent :</u></strong> ${windSpeedKmh} km/h</p>
+                    <p class="weather-info"><strong><u>Humidité :</u></strong> ${humidity}%</p> <!-- Affichage de l'humidité -->
+                    <p class="weather-info"><strong><u>Température minimale :</u></strong> ${minTemp}°C</p>
+                    <p class="weather-info"><strong><u>Température maximale :</u></strong> ${maxTemp}°C</p>
+                    <p class="weather-info"><strong><u>Rafales :</u></strong> ${gustSpeedKmh} km/h</p>
+                    <p class="weather-info"><strong><u>Pluie (3 heures) :</u></strong> ${rain} mm</p>
                 `;
 
                 dayContainer.appendChild(weatherItem)
